@@ -1,4 +1,12 @@
+- name: Install Redis Repos
+  ansible.builtin.yum:
+    name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    state: latest
 
+- name: Install Redis
+  ansible.builtin.dnf:
+    name: '@remi-6.2'
+    state: installed
 
 
 
