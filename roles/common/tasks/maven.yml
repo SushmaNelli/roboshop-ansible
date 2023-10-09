@@ -12,10 +12,9 @@
   args:
     chdir: /app
 
-- name: Load Schema Setup
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: mysql_schema_setup
+- name: Mysql Schema Setup
+  ansible.builtin.import_tasks:
+    file: mysql_schema_setup.yml
 
 - name: SystemD Setup
   ansible.builtin.import_tasks:
